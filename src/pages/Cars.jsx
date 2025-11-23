@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useCars from "../hooks/useCars";
 import CarCard from "../components/CarCard";
-import SearchBar from "../components/Searchbar";
+import Searchbar from "../components/Searchbar";
 
 export default function Cars() {
   const { cars, loading } = useCars();
