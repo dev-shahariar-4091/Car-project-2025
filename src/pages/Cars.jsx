@@ -33,7 +33,7 @@ export default function Cars() {
   return (
     <section className="pt-20 px-6">
       <div className="mb-6">
-        <SearchBar
+        <Searchbar
           brand={brand}
           setBrand={setBrand}
           priceRange={priceRange}
