@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import useCars from "../hooks/useCars";
 import CarCard from "../components/CarCard";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/Searchbar";
+import Searchbar from "../components/Searchbar";
 
 export default function Home() {
   const { cars, loading } = useCars();
@@ -53,7 +54,7 @@ export default function Home() {
             with confidence.
           </p>
           <div className="mt-6">
-            <SearchBar
+            <Searchbar
               brand={brand}
               setBrand={setBrand}
               priceRange={priceRange}
