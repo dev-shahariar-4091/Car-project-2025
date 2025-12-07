@@ -42,7 +42,7 @@ export default function CarCard({ car }) {
           </Link>
           <Link
             to={`/booking/${car.id}`}
-            className="bg-brand-600 text-black rounded-md py-2 border-r-green-500 px-3 text-center text-sm hover:bg-brand-700 transition"
+             className="border border-brand-600 text-brand-600 rounded-md py-2 px-3 text-center text-sm hover:bg-brand-50 transition"
           >
             Book Now
           </Link>

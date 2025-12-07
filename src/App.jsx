@@ -11,6 +11,7 @@ import Signup from "./pages/Singup";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Moredetails from "./pages/Moredetails";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/cars/:id/more" element={<Moredetails />} />
         </Routes>
       </main>
 

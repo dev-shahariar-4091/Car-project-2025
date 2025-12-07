@@ -35,7 +35,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 text-center py-4 text-sm">
-        © {new Date().getFullYear()} AutoCar. All rights reserved.
+        © {new Date().getFullYear()} AutoCar. All rights reserved.Dev.Shahariar
       </div>
     </footer>
   );

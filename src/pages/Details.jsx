@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useCars from "../hooks/useCars";
 
 export default function Details() {
   const { id } = useParams();
   const { cars, loading } = useCars();
+  const navigate = useNavigate();
 
   if (loading) {
     return (
@@ -58,6 +59,22 @@ export default function Details() {
           <p className="mt-3 font-semibold text-brand-700 text-lg">
             ${car.pricePerDay}/day
           </p>
+
+          {/* ✅ Buttons */}
+          <div className="mt-4 flex gap-3">
+            <button
+              onClick={() => navigate(-1)}
+              className="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300"
+            >
+              ⬅ Back
+            </button>
+            <button
+              onClick={() => navigate(`/cars/${id}/more`)} // navigate to more details page
+              className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 transition"
+            >
+              More Details
+            </button>
+          </div>
         </div>
       </div>
     </section>

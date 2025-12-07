@@ -6,57 +6,67 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setOpen(true);
+    setOpen(true); // ✅ show popup
+  };
+
+  // ✅ Close popup and refresh page
+  const handleClose = () => {
+    setOpen(false);
+    window.location.reload();
   };
 
   return (
-    <section className="pt-20 px-6">
-      <h2 className="text-2xl font-bold text-brand-600 mb-4">Sign Up</h2>
+    <section className="pt-20 px-6 text-center">
+      {/* Centered heading */}
+      <h2 className="text-3xl font-bold text-blue-600 mb-6">Sign Up</h2>
 
       <form
         onSubmit={handleSubmit}
-        className="max-w-md mx-auto bg-white shadow-md rounded-md p-6 space-y-4"
+        className="max-w-md mx-auto bg-white shadow-lg rounded-lg p-8 space-y-4 border border-blue-200"
       >
         <input
           required
           name="fullName"
-          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:ring-brand-600"
+          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Full name"
         />
         <input
           required
           type="email"
           name="email"
-          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:ring-brand-600"
+          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Email address"
         />
         <input
           required
           type="password"
           name="password"
-          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:ring-brand-600"
+          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Password"
         />
         <input
           required
           type="password"
           name="confirmPassword"
-          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring focus:ring-brand-600"
+          className="border rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Confirm password"
         />
+
+        {/* Styled button */}
         <button
           type="submit"
-          className="bg-brand-600 text-white rounded-md py-2 px-4 w-full hover:bg-brand-700"
+          className="bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full hover:bg-blue-700 transition"
         >
           Create Account
         </button>
       </form>
 
+      {/* ✅ Popup modal */}
       <Model
         open={open}
         title="Success"
         message="🎉 Signup successful! Welcome aboard."
-        onClose={() => setOpen(false)}
+        onClose={handleClose} // refresh after closing
       />
     </section>
   );

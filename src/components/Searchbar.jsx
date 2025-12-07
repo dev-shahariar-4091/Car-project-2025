@@ -73,7 +73,7 @@ export default function Searchbar({
         <button
           type="button"
           onClick={onSearch}
-          className="bg-brand-600 text-white rounded-md py-2 px-4 w-full hover:bg-brand-700 transition"
+          className="bg-brand-600 text-black border-r-blue-500 rounded-md py-2 px-4 w-full hover:bg-brand-700 transition"
         >
           Search Cars
         </button>
