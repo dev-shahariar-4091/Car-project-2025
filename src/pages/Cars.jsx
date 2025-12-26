@@ -6,9 +6,8 @@ export default function Cars() {
   const { cars, loading } = useCars();
   const [brand, setBrand] = useState("");
   const [priceRange, setPriceRange] = useState("");
-  const [filtered, setFiltered] = useState([]);
+  const [filtered, setFiltered] = useState(null); // null = no filter applied yet
 
-  // ✅ Manual filter apply (no reload)
   const applyFilter = () => {
     let result = [...cars];
 
@@ -25,15 +24,19 @@ export default function Cars() {
       );
     }
 
-    setFiltered(result); // ✅ only update results, no reload
+    setFiltered(result); // ✅ show filtered result
+
+    // ✅ Reset filter fields after search
+    setBrand("");
+    setPriceRange("");
   };
 
-  const showing = filtered.length ? filtered : cars;
+  // Default: show all cars if no filter applied
+  const showing = filtered === null ? cars : filtered;
 
   return (
     <section className="pt-20 px-6">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        
         {/* Sidebar filter */}
         <aside className="bg-white shadow-xl rounded-xl p-8 md:col-span-1 h-fit sticky top-24">
           <h3 className="text-2xl font-bold mb-6 border-b pb-3 text-gray-800">
@@ -43,7 +46,9 @@ export default function Cars() {
           <div className="flex flex-col space-y-4">
             {/* Brand select */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Brand</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Brand
+              </label>
               <select
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
@@ -60,7 +65,9 @@ export default function Cars() {
 
             {/* Price range select */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Price Range</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Price Range
+              </label>
               <select
                 value={priceRange}
                 onChange={(e) => setPriceRange(e.target.value)}
@@ -74,7 +81,7 @@ export default function Cars() {
               </select>
             </div>
 
-            {/* ✅ Search button */}
+            {/* Search button */}
             <button
               onClick={applyFilter}
               className="w-full bg-blue-600 text-white font-semibold py-2 rounded-md shadow-md hover:bg-blue-700 transition"

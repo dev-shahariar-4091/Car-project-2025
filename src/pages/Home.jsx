@@ -18,7 +18,7 @@ export default function Home() {
         className="w-full h-screen overflow-hidden mb-8"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1678047047743-77cc1d6ffaf5?q=80&w=1170&auto=format&fit=crop)",
+            "url(https://images.unsplash.com/photo-1647588854348-f3b37a0f0ef7?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
