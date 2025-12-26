@@ -26,9 +26,9 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white">Contact</h3>
           <ul className="mt-2 space-y-2 text-sm">
-            <li>📞 +1 (555) 123-4567</li>
+            <li>📞 +880 123456789</li>
             <li>✉️ info@autorent.com</li>
-            <li>📍 123 Main St, City, State</li>
+            <li>📍 123 Main Dhaka, Bangladesh</li>
           </ul>
         </div>
       </div>
