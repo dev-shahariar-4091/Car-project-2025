@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar () {
   const [open, setOpen] = useState(false);
 
   const linkClass = ({ isActive }) =>
@@ -18,7 +18,7 @@ export default function Navbar() {
           aria-label="AutoCar Home"
           className="text-xl font-bold text-brand-600"
         >
-          AutoCar
+          RentCar
         </NavLink>
 
         {/* Mobile Menu Button */}
